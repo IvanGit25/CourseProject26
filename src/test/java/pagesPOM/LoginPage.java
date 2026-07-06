@@ -3,9 +3,8 @@ package pagesPOM;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage extends BasePage{
+public class LoginPage extends BasePage {
 
     // Elements by ID
     @FindBy(id = "user-name")
@@ -28,8 +27,8 @@ public class LoginPage extends BasePage{
     public LoginPage(WebDriver driver) {
         super(driver);
 
-        // Mandatory: Implements elements of driver in constructor
-        PageFactory.initElements(driver, this);
+        // Mandatory: Implements all elements of driver in constructor
+        // PageFactory.initElements(driver, this); - moved to Base Page not to be forgotten again :)
     }
 
     // Override method for Expected result: LoginBtn to be visible

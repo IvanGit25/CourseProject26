@@ -20,7 +20,7 @@ public class DataProviders {
         };
     }
 
-    // Data Provider used to read Products names from .csv file
+    // Data Provider used to read Products names from CSV file
     @DataProvider(name = "itemsToBeAdded")
     public Object[][] getItems() {
 
