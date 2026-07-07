@@ -37,13 +37,8 @@ public class DataProviders {
             }
             return csvDataObject;
 
-        } catch (IOException e) {
-            System.out.println(e);
-            return null;
-
-        } catch (CsvException e) {
-            System.out.println(e);
-            return null;
+        } catch (IOException | CsvException e) {
+            throw new RuntimeException(e);
         }
     }
 }

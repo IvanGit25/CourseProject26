@@ -6,7 +6,7 @@ import pagesPOM.LoginPage;
 import pagesPOM.ProductsPage;
 import testsBase.TestUtils;
 
-public class SuccessfulLogin extends TestUtils {
+public class SuccessfulLoginTest extends TestUtils {
 
     @Test
     public void successfulLoginTest() {

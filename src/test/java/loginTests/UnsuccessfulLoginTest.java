@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import pagesPOM.LoginPage;
 import testsBase.TestUtils;
 
-public class UnsuccessfulLogin extends TestUtils {
+public class UnsuccessfulLoginTest extends TestUtils {
 
     @Test(dataProvider = "wrongUsers")
     public void unsuccessfulLogin(String username, String password) {
