@@ -23,10 +23,21 @@ public class DataProviders {
     // Data Provider used to read Products names from CSV file
     @DataProvider(name = "itemsToBeAdded")
     public Object[][] getItems() {
+        return readCsvFile("src/test/resources/products.csv");
+    }
+
+    // Data Provider used to read Checkout info from CSV file
+    @DataProvider(name = "checkoutData")
+        public Object[][] getCheckoutData() {
+        return readCsvFile("src/test/resources/checkoutData.csv");
+    }
+
+        // Read data from CSV files
+        private Object[][] readCsvFile(String filePath) {
 
         try {
             CSVReader csvReader = new CSVReader
-                    (new FileReader("src/test/resources/products.csv"));
+                    (new FileReader(filePath));
 
             List<String[]> csvData = csvReader.readAll();
 
