@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -25,7 +26,7 @@ public class TestUtils extends DataProviders {
     @BeforeMethod
     public void setupDriverAndOpenTargetUrl() {
 
-        // Read values from configuration file
+        // Read values from configurations with Implicit wait
         readConfig("src/test/resources/config.properties");
         setupDriver();
 
@@ -71,16 +72,23 @@ public class TestUtils extends DataProviders {
             case "firefox":
                 driver = setupFirefoxDriver();
                 break;
-
+            case "safari":
+                driver = setupSafariDriver();
+                break;
             default:
                 driver = setupChromeDriver();
         }
     }
 
-    // Create and return Firefox and Chrome WebDrivers
+    // Create and return Firefox,Safari and Chrome WebDrivers
     private WebDriver setupFirefoxDriver() {
         WebDriverManager.firefoxdriver().setup();
         return new FirefoxDriver();
+    }
+
+    private WebDriver setupSafariDriver() {
+        WebDriverManager.safaridriver().setup();
+        return new SafariDriver();
     }
 
     private WebDriver setupChromeDriver() {

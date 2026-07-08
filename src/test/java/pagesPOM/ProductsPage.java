@@ -8,11 +8,11 @@ import org.openqa.selenium.support.FindBy;
 public class ProductsPage extends BasePage {
 
     // Products page title
-    @FindBy(className = "title")
+    @FindBy(xpath = "//span[contains(text(),'Products')]")
     private WebElement productsTitle;
 
     // Shopping cart badge
-    @FindBy(className = "shopping_cart_badge")
+    @FindBy(css = ".shopping_cart_badge")
     private WebElement shoppingCartBadge;
 
     // Shopping cart icon
