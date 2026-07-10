@@ -28,8 +28,7 @@ public class DataProviders {
 
     // Data Provider used to read Checkout info from CSV file
     @DataProvider(name = "checkoutData")
-        public Object[][] getCheckoutData() {
-        return readCsvFile("src/test/resources/checkoutData.csv");
+        public Object[][] getCheckoutData() { return readCsvFile("src/test/resources/checkoutData.csv");
     }
 
         // Read data from CSV files
