@@ -92,7 +92,10 @@ public class TestUtils extends DataProviders {
     }
 
     private WebDriver setupChromeDriver() {
+        System.out.println("User home: " + System.getProperty("user.home"));
         WebDriverManager.chromedriver().setup();
+        System.out.println("ChromeDriver: "
+                + System.getProperty("webdriver.chrome.driver"));
         return new ChromeDriver();
     }
 }
