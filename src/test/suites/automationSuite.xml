@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="SauceDemoTests" thread-count="2" verbose="1" parallel="classes">
+    <test name="Automation Tests">
+        <classes>
+            <class name="productsTests.AddProductsToCartTest"></class>
+            <class name="productsTests.CheckoutProductsTest"></class>
+        </classes>
+    </test>
+</suite>
