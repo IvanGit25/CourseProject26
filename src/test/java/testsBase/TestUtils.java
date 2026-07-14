@@ -3,6 +3,7 @@ package testsBase;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
@@ -92,10 +93,11 @@ public class TestUtils extends DataProviders {
     }
 
     private WebDriver setupChromeDriver() {
-        System.out.println("User home: " + System.getProperty("user.home"));
         WebDriverManager.chromedriver().setup();
-        System.out.println("ChromeDriver: "
-                + System.getProperty("webdriver.chrome.driver"));
-        return new ChromeDriver();
+
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-popup-blocking");
+
+        return new ChromeDriver(options);
     }
 }
