@@ -8,7 +8,6 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -95,8 +94,11 @@ public class TestUtils extends DataProviders {
     private WebDriver setupChromeDriver() {
         WebDriverManager.chromedriver().setup();
 
+        // Add new Chrome driver option for blocking Password Manager Popup
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-popup-blocking");
+
+        options.addArguments("--guest");
+        options.addArguments("--incognito");
 
         return new ChromeDriver(options);
     }
