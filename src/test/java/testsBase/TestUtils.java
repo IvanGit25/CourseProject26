@@ -92,7 +92,9 @@ public class TestUtils extends DataProviders {
     }
 
     private WebDriver setupChromeDriver() {
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver()
+                .clearDriverCache()
+                .setup();
 
         // Add new Chrome driver option for blocking Password Manager Popup
         ChromeOptions options = new ChromeOptions();
